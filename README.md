@@ -15,6 +15,8 @@ This script runs on server side and captures ip's who are making too many GET re
 -> 🔧 More features coming...
 ```
 
+![Detection Example]("https://i.ibb.co/q3mCLjx1/Burstexample.png" "CrawlerBuster example")
+
 [OPTIONAL]
 ```
 <<>>⚠️IP REPORTING FOR BLACKLISTING⚠️<<>>
