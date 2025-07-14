@@ -131,6 +131,10 @@ check service and current logging
 ```
 systemctl status crawlerbuster.service
 ```
+check journal logs for extensive logging
+```
+sudo journalctl -u crawlerbuster.service -x -e
+```
 
 - You're Done! - 👍
 Created by Daniel Cmdline -
