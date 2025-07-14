@@ -16,6 +16,7 @@ This script runs on server side and captures ip's who are making too many GET re
 ```
 
 ![Detection Example](./img/burstexample.png "CrawlerBuster example")
+![Ip tables Example](./img/iptables_ex.png "CrawlerBuster example")
 
 [OPTIONAL]
 ```
