@@ -37,6 +37,8 @@ elif not REQUESTS_AVAILABLE:
 request_log = defaultdict(lambda: deque())
 # set to stored banned ips
 banned_ips = set()
+#reported ips set
+reported_ips = set()
 # parses the safe list
 safe_list = SAFE_IP_LIST.split()
 # parses the keywords
@@ -44,6 +46,10 @@ key_words = KEY_WORDS.split()
 
 
 def report_ip(api_key, ip, comment, categories):
+    
+    if ip in reported_ips:
+        return
+    
     url = f'https://api.abuseipdb.com/api/v2/report'
     headers = {
         'Key': api_key,
@@ -60,6 +66,7 @@ def report_ip(api_key, ip, comment, categories):
         print(f'Status Code: {response.status_code}', flush=True)
         print('Response JSON:', flush=True)
         print(response.json(), flush=True)
+        reported_ips.add(ip)
         return response.json()
     except requests.exceptions.HTTPError as errh:
         print(f'Http Error: {errh}', flush=True)
